@@ -1,0 +1,61 @@
+<mvc:View controllerName="office.controller.Managers"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page showHeader="true" id="page" title="">
+        <content>
+             <VBox id="_IDGenVbox1">
+            <Title id="managerTitle" text="{i18n>managersTable}" class="tableTitle"></Title>
+            <Table items="{/managerTableData}" id="managersTableId" growing="true" growingThreshold="5">
+                <columns>
+                <!-- Dynamic creation of columns in the controller -->
+                </columns>
+                <items>
+                    <ColumnListItem id="column" press="onRowPress">
+                        <cells>
+                            <Text id="_IDGenText1" text="{ManagerId}"       />
+                            <Text id="_IDGenText2" text="{FirstName}"       />
+                            <Text id="_IDGenText3" text="{LastName}"        />
+                            <Text id="_IDGenText9" text="{
+                                path: 'Birthdate', 
+                                type: 'sap.ui.model.type.Date', 
+                                formatOptions: { 
+                                    source: { pattern: 'YYYYMMDD' }, 
+                                    pattern: 'dd/MM/yyyy' }}" />
+                            <Text id="_IDGenText5" text="{Gender}"          />
+                            <Text id="_IDGenText6" text="{DepartmentId}"    />
+                            <Button id="ActionButton" text="{i18n>showEmployees}" press="onShowEmployees"></Button>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+            <HBox id="_IDGenHBox1">
+                <Title id="_IDGenText7" text="{i18n>employeesTable} - " class="tableTitle"/>
+                <Text id="_IDGenText8" text="{/employeetableData/0/DepartmentId}" class="tableTitle" />
+            </HBox>
+            <Table items="{/employeetableData}" id="employeesTableId" growing="true" visible="true"> 
+                <columns/>
+                <items>
+                    <ColumnListItem id="EmployeeColumn">
+                        <cells>
+                            <Text id="_IDGenEmployeesText1" text="{EmployeeId}"      />
+                            <Text id="_IDGenEmployeesText2" text="{FirstName}"      />
+                            <Text id="_IDGenEmployeesText3" text="{LastName}"       />
+                            <Text id="_IDGenEmployeesText4" text="{
+                                path: 'Birthdate', 
+                                type: 'sap.ui.model.type.Date', 
+                                formatOptions: { 
+                                    source: { pattern: 'YYYYMMDD' }, 
+                                    pattern: 'dd/MM/yyyy' }}" />
+                            <Text id="_IDGenEmployeesText5" text="{Gender}"         />
+                            <Text id="_IDGenEmployeesText6" text="{DepartmentId}"  />
+                            <Text id="_IDGenEmployeesText7" text="{PositionId}"  />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            </VBox>
+            <Button id="addEmployeeButtonId" text="{i18n>addEmployee}" press="onAddEmployee" class="sendbtn"></Button>
+        </content>
+    </Page>
+</mvc:View>

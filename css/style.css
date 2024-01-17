@@ -1,0 +1,71 @@
+.title1 {
+    font-size: 25px;
+}
+
+.logo {
+    height: 25px;
+    width: 25px;
+}
+
+.form {
+    display: flex;
+    position: relative;
+    top: 100px;
+    border: red outset 1px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.lable {
+    font-size: 20px;
+    width: 125px;
+    overflow-wrap: break-word;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+.sendbtn {
+    margin: 10px;
+}
+
+.homeScreen {
+    display:            flex;
+    justify-content:    center;
+}
+
+.datesLabel {
+    font-size:  25px;
+}
+
+.tableTitle {
+    font-size:  35px;
+    margin:     10px;
+}
+
+.createEmployee {
+    width:      400px;
+    background-color: white;
+    padding-left:    10px;
+}
+
+Button {
+    margin: 10Px;
+}
+
+.boxDialogPopup {
+    margin-top: 12px;
+    margin-bottom: 18PX;
+}
+
+.sapMMessageToastSuccess {
+    background-color: lightgreen !important;
+    color: white; /* Set the text color for better visibility */
+  }

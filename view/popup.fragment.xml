@@ -1,0 +1,80 @@
+<core:FragmentDefinition
+  xmlns="sap.m"
+  controllerName="office.controller.Managers"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  core:require="{
+    String: 'sap/ui/model/type/String',
+    Date:   'sap/ui/model/type/Date' 
+  }"
+  >
+
+  <Dialog             id="addEmployeePopupFragment"   class="createEmployee"    title="{i18n>addEmployee}">
+    <HBox             id="IDFirstNameBox"             class="boxDialogPopup">
+      <Label          id="dialogText2"                required="true"           text="{i18n>firstName}"  />
+      <Input          id="IDfirstNameInput"    
+        value="{
+          path : '/newEmployee/FirstName', 
+          type : 'String',
+          constraints : {maxLength : 30, minLength : 2 }
+        }"
+      />
+    </HBox>
+
+    <HBox             id="_IDGenHBox2"                class="boxDialogPopup">
+      <Label          id="dialogText3"                required="true"           text="{i18n>firstName}" />
+      <Input          id="IDlastNameInput"    
+        value="{
+          path : '/newEmployee/LastName', 
+          type : 'String',
+          constraints : {maxLength : 30, minLength : 2 }
+        }"
+      />
+    </HBox>
+
+    <HBox             id="_IDGenHBox3" class="boxDialogPopup">
+      <Label          id="dialogText4"           required="true"              text="{i18n>birthdate}"/>
+      <DatePicker     id="IDbirthdateInput"      displayFormat="dd/MM/yyyy"   change="onDatePickerChange"      valueFormat="yyyyMMdd"            placeholder="DD/MM/YYYY" 
+        value="{
+          path: '/newEmployee/Birthdate',
+          type: '/Date'
+        }"
+      />
+    </HBox>
+
+    <HBox             id="_IDGenHBox4"                class="boxDialogPopup">
+    <Label            id="_IDGenLabel1"               required="true"           text="{i18n>gender}"/>
+      <ComboBox       id="IDgenderInput"              change="onComboBoxCange"
+        items="{/genders}"
+        selectedKey="{/newEmployee/Gender}">
+        <items>
+          <core:Item  id="_IDGenItem1" key="{key}" text="{text}"/>
+        </items>
+      </ComboBox>
+    </HBox>
+
+    <HBox             id="_IDGenHBox5"                class="boxDialogPopup">
+      <Label          id="dialogText6"                                          text="{i18n>departmentId}" />
+      <Input          id="IDInput_SelectedDepartmentId"                                                     value="{/newEmployee/DepartmentId}"   editable="false"/>
+    </HBox>
+
+    <HBox             id="_IDGenHBox6"                class="boxDialogPopup">
+    <Label            id="_IDGenLabel2"               required="true"           text="{i18n>positionId}"/>
+    <ComboBox         id="IDpositionInput"            change="onComboBoxCange"
+      items="{/positions}"
+      selectedKey="{/newEmployee/PositionId}">
+      <items>
+        <core:Item    id="_IDGenItem10" key="{PositionId}"                      text="{PositionId}"/>
+      </items>
+    </ComboBox>
+    </HBox>
+
+    <footer>
+      <Toolbar id="_IDGenToolbar1">
+        <Button       id="addEmployeeBtn"             class="popUpBut"          text="{i18n>addEmployee}"   press="onPopupAddEmployeesBtn"        enabled="true" />
+        <Button       id="cancelBtn"                  class="sendbtn"           text="{i18n>cancel}"          press="onClosePopup"  />
+      </Toolbar>
+    </footer>
+  </Dialog>
+
+</core:FragmentDefinition>
